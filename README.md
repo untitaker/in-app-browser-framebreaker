@@ -19,3 +19,7 @@ since none of this is any sort of standard, the URL schemes tried are a moving
 target.
 
 This works as of 2020 with TikTok's and Instagram's in-app browsers.
+
+## TODO
+
+* Detect in-app browsers, i.e. don't rely on button-press

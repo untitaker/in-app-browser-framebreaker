@@ -1,36 +1,39 @@
 <script>
-var url = location.href;
-var bareUrl = location.hostname + location.pathname;
 
-/// iOS
-// kudos to https://gist.github.com/felquis/a08ee196747f71689dcb
+function breakout() {
+    var url = location.href;
+    var bareUrl = location.hostname + location.pathname;
 
-// opera ios
-location.href = "opera-" + url;
+    /// iOS
+    // kudos to https://gist.github.com/felquis/a08ee196747f71689dcb
 
-// firefox ios
-location.href = "firefox://open-url?url=" + url;
+    // opera ios
+    location.href = "opera-" + url;
 
-// chrome ios
-// https://developer.chrome.com/multidevice/ios/links#uri_schemes
-location.href = (
-    "googlechrome" + (location.protocol == "https:" ? "s" : "") + "://"
-    + bareUrl
-);
+    // firefox ios
+    location.href = "firefox://open-url?url=" + url;
 
-/// Android
+    // chrome ios
+    // https://developer.chrome.com/multidevice/ios/links#uri_schemes
+    location.href = (
+        "googlechrome" + (location.protocol == "https:" ? "s" : "") + "://"
+        + bareUrl
+    );
 
-// chrome on android. apparently only works with bare hostnames, no subpaths or custom schemas
-location.href = (
-  "googlechrome://navigate?url="
-    + location.hostname
-);
+    /// Android
 
-// generic android intent, opens default browser
-// kudos to: https://stackoverflow.com/questions/58229510/url-scheme-to-open-chrome-firefox-android-os-from-facebook-post
-location.href = "intent:" + url + "#Intent;end";
+    // chrome on android. apparently only works with bare hostnames, no subpaths or custom schemas
+    location.href = (
+      "googlechrome://navigate?url="
+        + location.hostname
+    );
+
+    // generic android intent, opens default browser
+    // kudos to: https://stackoverflow.com/questions/58229510/url-scheme-to-open-chrome-firefox-android-os-from-facebook-post
+    location.href = "intent:" + url + "#Intent;end";
+}
 </script>
 
 <h1>hello world</h1>
 
-<p>hopefully you're not viewing this from an in-app browser, yes?</p>
+<button onclick=breakout>Break out!</button>
