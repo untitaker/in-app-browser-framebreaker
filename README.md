@@ -32,6 +32,7 @@ To try out the demo, you can:
 5. There will be at least one video that has a link to Google in its video descripton, tap it.
 6. Search for this repository (or my username).
 7. Browse to the above link.
+8. Tap the "Break out" button and see how the website re-opens in hopefully the native browser.
 
 ## TODO
 
