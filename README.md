@@ -34,6 +34,10 @@ To try out the demo, you can:
 7. Browse to the above link.
 8. Tap the "Break out" button and see how the website re-opens in hopefully the native browser.
 
+## Caveats
+
+* You may get prompts when clicking "Break me". Certainly on iOS, and perhaps also on certain Android versions.
+
 ## TODO
 
 * Detect in-app browsers, i.e. don't rely on button-press
