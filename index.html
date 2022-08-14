@@ -5,6 +5,8 @@
 <script>
 
 function breakout() {
+    // Order matters here. First successful intent wins.
+
     var url = location.href;
     var bareUrl = location.hostname + location.pathname;
 
@@ -26,15 +28,15 @@ function breakout() {
 
     /// Android
 
+    // generic android intent, opens default browser
+    // kudos to: https://stackoverflow.com/questions/58229510/url-scheme-to-open-chrome-firefox-android-os-from-facebook-post
+    location.href = "intent:" + url + "#Intent;end";
+
     // chrome on android. apparently only works with bare hostnames, no subpaths or custom schemas
     location.href = (
       "googlechrome://navigate?url="
         + location.hostname
     );
-
-    // generic android intent, opens default browser
-    // kudos to: https://stackoverflow.com/questions/58229510/url-scheme-to-open-chrome-firefox-android-os-from-facebook-post
-    location.href = "intent:" + url + "#Intent;end";
 }
 </script>
 
