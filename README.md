@@ -19,7 +19,7 @@ internet out of personal curiosity (see `index.html` sourcecode for
 references). A lot of advice is outdated, and so will this website for sure.
 
 This repo provides a website with a button that breaks the website out of the
-in-app browser. Tested as of 2022 with TikTok's and Instagram's in-app browser.
+in-app browser. Tested as of 2022 with TikTok's and Instagram's in-app browser **on Android**. I don't have an iOS device to test on.
 
 [See demo here.](https://untitaker.github.io/in-app-browser-framebreaker)
 
