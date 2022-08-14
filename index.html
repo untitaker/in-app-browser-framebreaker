@@ -4,7 +4,11 @@
 
 <script>
 
-function breakout() {
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function breakout() {
     // Order matters here. First successful intent wins.
 
     var url = location.href;
@@ -15,9 +19,11 @@ function breakout() {
 
     // opera ios
     location.href = "opera-" + url;
+    await sleep(10);
 
     // firefox ios
     location.href = "firefox://open-url?url=" + url;
+    await sleep(10);
 
     // chrome ios
     // https://developer.chrome.com/multidevice/ios/links#uri_schemes
@@ -25,12 +31,14 @@ function breakout() {
         "googlechrome" + (location.protocol == "https:" ? "s" : "") + "://"
         + bareUrl
     );
+    await sleep(10);
 
     /// Android
 
     // generic android intent, opens default browser
     // kudos to: https://stackoverflow.com/questions/58229510/url-scheme-to-open-chrome-firefox-android-os-from-facebook-post
     location.href = "intent:" + url + "#Intent;end";
+    await sleep(10);
 
     // chrome on android. apparently only works with bare hostnames, no subpaths or custom schemas
     location.href = (
